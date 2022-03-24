@@ -1,13 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a knowledge template for the Rails implementation of Turbo. 
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby & Rails version 
+`ruby -version 3.0.3`
+
+`rails -v 7.0.0`
+
+* Project Setup
+To init a rails project, enter the following:
+
+`bundle exec rails new . \
+  --css=sass \
+  --javascript=esbuild \
+  --database=postgresql \
+  --force
+`
 
 * System dependencies
+To install all dependencies and create the database:
+`bin/setup`
 
 * Configuration
 
