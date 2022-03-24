@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  price: 9.99
+  name: Little Trees
+  price: 0.99
   quantity: 1
 
 two:
-  name: MyString
-  price: 9.99
+  name: Sweet Sugar Candies
+  price: 1.99
+  quantity: 20
+
+invalid:
+  name:
+  price:
   quantity: 1
