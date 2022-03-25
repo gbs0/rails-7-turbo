@@ -56,6 +56,9 @@ SimpleForm.setup do |config|
     b.use :label_input
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
     b.use :error, wrap_with: { tag: :span, class: :error }
+    
+    b.use :label, class: "visually-hidden"
+    b.use :input, class: "form__input", error_class: "form__input--invalid"
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
@@ -63,6 +66,8 @@ SimpleForm.setup do |config|
     #
     # b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
+
+  config.generate_additional_classes_for = []
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
@@ -161,8 +166,8 @@ SimpleForm.setup do |config|
   # config.input_class = nil
 
   # Define the default class of the input wrapper of the boolean input.
-  config.boolean_label_class = 'checkbox'
-
+  # config.boolean_label_class = 'checkbox'
+  config.boolean_label_class = "form__checkbox-label"
   # Defines if the default input wrapper class should be included in radio
   # collection wrappers.
   # config.include_default_input_wrapper_class = true
@@ -173,4 +178,6 @@ SimpleForm.setup do |config|
   # Defines validation classes to the input_field. By default it's nil.
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
+  config.label_text = lambda { |label, _, _| label }
+  
 end
