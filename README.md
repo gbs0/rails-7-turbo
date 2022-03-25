@@ -4,12 +4,12 @@ This project is a knowledge template for the Rails implementation of Turbo.
 
 Things you may want to cover:
 
-* Ruby & Rails version 
+#### Ruby & Rails version:
 `ruby -version 3.0.3`
 
 `rails -v 7.0.0`
 
-* Project Setup
+#### Project Setup:
 To init a rails project, enter the following:
 
 `bundle exec rails new . \
@@ -19,22 +19,21 @@ To init a rails project, enter the following:
   --force
 `
 
-* System dependencies
+#### System dependencies:
 To install all dependencies and create the database:
 `bin/setup`
 
-* Configuration
+#### Configuration:
 
-* Database creation
+#### Database creation:
 
-* Database initialization
+#### Database initialization;
 
-* How to run the test suite
+#### How to run the test suite:
 To run all the system tests for this application, just run:
 `rails test:system`
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Services (job queues, cache servers, search engines, etc.):
 
-* Deployment instructions
+#### Deployment instructions:
 
-* ...
