@@ -1,6 +1,6 @@
 # README
 
-This project is a knowledge template for the Rails implementation of Turbo. 
+This project is a knowledge template for the Rails implementation of Turbo.
 
 Things you may want to cover:
 
@@ -30,6 +30,8 @@ To install all dependencies and create the database:
 * Database initialization
 
 * How to run the test suite
+To run all the system tests for this application, just run:
+`rails test:system`
 
 * Services (job queues, cache servers, search engines, etc.)
 
