@@ -1,4 +1,4 @@
-<%= simple_form_for product, html: {class: "form"} do |form| %>
+<%= simple_form_for product do |form| %>
   <% if product.errors.any? %>
     <div>
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
