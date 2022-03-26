@@ -2,13 +2,24 @@
 <div class="container">
   <h1>Products</h1>
 
+  <%= form_tag products_path, method: :get, html: {class: "form"} do %>
+    
+      <%= label_tag :search, "Search" %>
+      <%= text_field_tag :search, params[:search], class: "form-control" %>
+    
+    <%= submit_tag "Search", class: "btn btn--primary" %>
+  <%end %>
   <div id="products">
-    <% @products.each do |product| %>
-      <%= render product %>
-      <%#= link_to "Show this product", product %>
-      
-    <% end %>
-  </div>
+    <% if @products.empty? %>
+      <p>No products found</p>
+    <% else %>
 
+      <% @products.each do |product| %>
+        <%= render product %>
+        <%#= link_to "Show this product", product %>
+        
+      <% end %>
+    </div>
+  <% end %>
   <%= link_to "New Product", new_product_path, class: "btn btn--light"  %>
 </div>
