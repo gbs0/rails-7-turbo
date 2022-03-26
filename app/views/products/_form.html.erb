@@ -1,6 +1,6 @@
-<%= simple_form_for product do |form| %>
+<%= simple_form_for product, html: {class: "form"} do |form| %>
   <% if product.errors.any? %>
-    <div style="color: red">
+    <div>
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
@@ -27,6 +27,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create Product", class: "btn btn--primary" %>
   </div>
 <% end %>
