@@ -18,7 +18,7 @@
       <% else %>
         <% @products.each do |product| %>
           <%= render product %>
-          <%#= link_to "Show this product", product %>    
+          <%#= link_to "Show this product", product_path(product), class:"btn btn-secondary" %>
         <% end %>
       <% end %>
     </table>
