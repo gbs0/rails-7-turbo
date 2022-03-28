@@ -1,4 +1,4 @@
-<div class="text-sm breadcrumbs">
+<!-- <div class="text-sm breadcrumbs">
   <%##= Rails.application.routes.url_helpers %>
   <ul>
     <li><a>Home</a></li> 
@@ -6,3 +6,25 @@
     <li>Add Document</li>
   </ul>
 </div>
+-->
+<nav class="text-sm breadcrumbs">
+  <ol class="">
+    <% breadcrumbs.each do |crumb| %>
+     <li>
+      <% if crumb.link? %>
+        <%= link_to crumb.name, crumb.url, class: "breadcrumb-link" %>
+      <% else %>
+        <span class="breadcrumb-page">
+          <%= crumb.name %>
+        </span>
+      <% end %>
+    
+      <% unless crumb == breadcrumbs.last %>
+        <span class="breadcrumb-separator">/</span>
+      <% end %>
+     </li>
+    <% end %>
+  </ol>
+</nav>
+
+<%# raise %>
