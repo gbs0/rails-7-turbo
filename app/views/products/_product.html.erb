@@ -1,17 +1,62 @@
 <div class="product" id="<%= dom_id product %>">
-  <p>
-    <strong>Name:</strong>
-    <%= link_to product.name, product_path(product) %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    $<%= product.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= product.quantity %>
-  </p>
-
+  <thead>
+    <tr>
+      <th>
+        <label>
+          <input type="checkbox" class="checkbox">
+        </label>
+      </th>
+      <th>Name</th>
+      <th>Actions</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- row 1 -->
+    <tr>
+      <th>
+        <label>
+          <input type="checkbox" class="checkbox">
+        </label>
+      </th>
+      <td>
+        <div class="flex items-center space-x-3">
+          <div class="avatar">
+            <div class="mask mask-squircle w-12 h-12">
+              <div><%= product.id %></div>
+            </div>
+          </div>
+          <div>
+            <div class="font-bold"><%= link_to product.name, product_path(product) %></div>
+            <!-- <div class="text-sm opacity-50">United States</div> -->
+          </div>
+        </div>
+      </td>
+      <td>
+        <!-- <button class="btn btn-secondary btn-xs text-white">details</button> -->
+        <%= link_to "details", product_path(product), class: "btn btn-secondary btn-xs text-white" %>
+        <br>
+        <!-- <span class="badge badge-ghost badge-sm">Desktop Support Technician</span> -->
+      </td>
+      <td>$<%= product.price %></td>
+      <th>
+        <%= product.quantity %>
+      </th>
+      <td><%= product.updated_at.strftime("%d/%M/%Y") %></td>
+    </tr>
+  
+  </tbody>
+  <!-- foot -->
+  <!-- <tfoot>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Last Update</th>
+    </tr>
+  </tfoot> -->
 </div>
+

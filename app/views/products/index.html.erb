@@ -1,25 +1,32 @@
 <p style="color: green"><%= notice %></p>
 <div class="container">
-  <h1>Products</h1>
+  <h1 class="text-3xl text-dark">Products</h1>
+  <div style="display:flex; justify-content:space-between" class="p-5">
+    <%= form_tag products_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "form" do %>
+      
+        <%= label_tag :search, "Search", class: "text-md " %>
+        <%= text_field_tag :search, params[:search], class: "form-control" %>
+      
+      <%= submit_tag "Search", class: "btn btn--primary" %>
+      
+    <% end %>
 
-  <%= form_tag products_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, html: { class: "form" } do %>
-    
-      <%= label_tag :search, "Search" %>
-      <%= text_field_tag :search, params[:search], class: "form-control" %>
-    
-    <%= submit_tag "Search", class: "btn btn--primary" %>
-  <%end %>
-  <div id="products">
-    <% if @products.empty? %>
-      <p>No products found</p>
-    <% else %>
+    <%= link_to "New Product", new_product_path, class: "btn btn--light"  %>
+  </div>
+
+  <div id="products" class="overflow-x-auto w-full">
+    <table class="table w-full">
+      <% if @products.empty? %>
+        <p>No products found</p>
+      <% else %>
       <%= turbo_frame_tag "search-results" do %>
         <% @products.each do |product| %>
           <%= render product %>
           <%#= link_to "Show this product", product %>    
         <% end %>
       <% end %>
-    </div>
+    </table>
+  </div>
   <% end %>
-  <%= link_to "New Product", new_product_path, class: "btn btn--light"  %>
+  
 </div>
