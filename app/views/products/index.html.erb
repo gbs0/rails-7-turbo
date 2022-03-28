@@ -19,14 +19,14 @@
       <% if @products.empty? %>
         <p>No products found</p>
       <% else %>
-      <%= turbo_frame_tag "search-results" do %>
-        <% @products.each do |product| %>
-          <%= render product %>
-          <%#= link_to "Show this product", product %>    
+        <%= turbo_frame_tag "search-results" do %>
+          <% @products.each do |product| %>
+            <%= render product %>
+            <%#= link_to "Show this product", product %>    
+          <% end %>
         <% end %>
       <% end %>
     </table>
   </div>
-  <% end %>
   
 </div>
