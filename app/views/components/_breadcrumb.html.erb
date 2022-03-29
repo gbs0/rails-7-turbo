@@ -8,7 +8,7 @@
 </div>
 -->
 <nav class="text-sm breadcrumbs">
-  <ol class="">
+  <ul class="">
     <% breadcrumbs.each do |crumb| %>
      <li>
       <% if crumb.link? %>
@@ -20,11 +20,11 @@
       <% end %>
     
       <% unless crumb == breadcrumbs.last %>
-        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-separator"></span>
       <% end %>
      </li>
     <% end %>
-  </ol>
+  </ul>
 </nav>
 
 <%# raise %>
