@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_breadcrumbs
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_form_action, only: %i[ new edit ]
 
   # GET /products or /products.json
   def index
@@ -73,5 +74,9 @@ class ProductsController < ApplicationController
 
     def set_breadcrumbs
       add_breadcrumb("Products", products_path)
+    end
+
+    def set_form_action
+      @action = request.original_fullpath.split("/").last.capitalize
     end
 end
