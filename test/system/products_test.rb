@@ -22,7 +22,7 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
     fill_in "Quantity", with: @product.quantity
-    click_on "Create Product"
+    click_on "New Product"
 
     assert_text "Product was successfully created."
     click_on "Back"
@@ -32,7 +32,7 @@ class ProductsTest < ApplicationSystemTestCase
     visit products_path
     click_link @product.name
 
-    assert_selector "h2", text: @product.name
+    assert_selector "h3", text: @product.name
   end
 
   test "updating a Product" do
@@ -42,12 +42,12 @@ class ProductsTest < ApplicationSystemTestCase
     click_link @product.name
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Editing Product"
+    assert_selector "h3", text: "Edit Product"
 
     fill_in "Name", with: @product_two.name
     fill_in "Price", with: @product_two.price
     fill_in "Quantity", with: @product_two.quantity
-    click_on "Update Product"
+    click_on "Edit Product"
 
     # assert_selector "h1", text: "Products"
     assert_text "Product was successfully updated."
