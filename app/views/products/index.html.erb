@@ -4,7 +4,7 @@
   <div style="display:flex; justify-content:space-between" class="p-5">
     <%= form_tag products_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "form" do %>
         <%= text_field_tag :search, params[:search], class: "input-bordered w-80 max-w-xs", placeholder: "Search Here" %>
-      <%= submit_tag "Search", class: "btn btn-secondary rounded ml-2 text-white" %>
+      <%= submit_tag "Search", class: "px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500 rounded ml-2 text-white" %>
     <% end %>
 
     <%= link_to "New Product", new_product_path, class: "btn btn--light rounded"  %>
